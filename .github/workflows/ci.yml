@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: sudo apt-get install -y build-essential cmake g++ 
+      - name: Install dependencies
+        run: sudo apt-get install -y build-essential googletest cmake g++
 
-    - name: Configure CMake
-      run: cmake -S . -B build
+      - name: Configure CMake
+        run: cmake -S . -B build
 
-    - name: Build
-      run: cmake --build build
+      - name: Build
+        run: cmake --build build
 
-    - name: Run Tests
-      run: ctest --test-dir build
+      - name: Run Tests
+        run: ctest --test-dir build
