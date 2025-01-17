@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: sudo apt-get install -y build-essential googletest cmake g++
+        run: sudo apt-get install -y build-essential libgtest-dev cmake g++
 
       - name: Configure CMake
         run: cmake -S . -B build
