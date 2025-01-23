@@ -8,3 +8,8 @@ target_include_directories(manufacturer
 		PUBLIC
 		${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+# Specify the library needed.
+target_link_libraries(manufacturer
+		PUBLIC
+		product)
