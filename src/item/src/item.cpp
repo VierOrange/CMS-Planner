@@ -36,3 +36,10 @@ void Item::setName(std::string nn)
 {
     name = nn;
 }
+void Item::setRate(unsigned int id, float rate)
+{
+}
+float Item::getRate(unsigned int id)
+{
+    return 0;
+}
