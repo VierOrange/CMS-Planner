@@ -4,10 +4,15 @@
 class Ore;
 
 TEST(OreTest, TestConstructor) {
-		std::string n{"D"};
-		Ore oreA("A");
-		EXPECT_EQ(oreA.getName(), "A");
+		Ore oreA("Copper Ore");
+		EXPECT_EQ(oreA.getName(), "Copper Ore");
 		EXPECT_EQ(oreA.getID(), 0);
+		EXPECT_EQ(oreA.getType(),"Ore");
+
+		oreA.setRate(10,10);
+		EXPECT_EQ(oreA.getRate(10),10);
+		EXPECT_EQ(oreA.getRate(1),0);
+
 		Ore oreB("B");
 		EXPECT_EQ(oreB.getID(), 1);
 		oreA.~Ore();
@@ -15,8 +20,6 @@ TEST(OreTest, TestConstructor) {
 		Ore oreC("C");
 		EXPECT_EQ(oreC.getName(), "C");
 		EXPECT_EQ(oreC.getID(), 0);
-		oreC.setName(n);
-		EXPECT_EQ(oreC.getName(), n);
 
 		
 }

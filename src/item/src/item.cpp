@@ -1,6 +1,8 @@
+#include <algorithm>
 #include <cmsp/item/item.h>
 #include <queue>
 #include <string>
+#include <utility>
 
 unsigned int Item::numItem = 0;
 std::queue<unsigned int> Item::dumpedID{};
@@ -38,8 +40,24 @@ void Item::setName(std::string nn)
 }
 void Item::setRate(unsigned int id, float rate)
 {
+    if (rate <= 0)
+    {
+        rateList.erase(id);
+    }
+    else
+    {
+        rateList[id] = rate;
+    }
 }
 float Item::getRate(unsigned int id)
 {
-    return 0;
+    auto it = rateList.find(id);
+    if (it == rateList.end())
+    {
+        return 0;
+    }
+    else
+    {
+        return it->second;
+    }
 }

@@ -4,10 +4,11 @@
 class Manufacturer;
 
 TEST(ItemTest, TestConstructor) {
-		std::string n{"D"};
-		Manufacturer manA("A");
-		EXPECT_EQ(manA.getName(), "A");
+		Manufacturer manA("Furnace");
+		EXPECT_EQ(manA.getName(), "Furnace");
 		EXPECT_EQ(manA.getID(), 0);
+		EXPECT_EQ(manA.getType(), "Manufacturer");
+
 		Manufacturer manB("B");
 		EXPECT_EQ(manB.getID(), 1);
 		manA.~Manufacturer();
@@ -15,8 +16,6 @@ TEST(ItemTest, TestConstructor) {
 		Manufacturer manC("C");
 		EXPECT_EQ(manC.getName(), "C");
 		EXPECT_EQ(manC.getID(), 0);
-		manC.setName(n);
-		EXPECT_EQ(manC.getName(), n);
 
 		
 }

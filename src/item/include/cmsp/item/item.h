@@ -2,8 +2,7 @@
 
 #include <queue>
 #include <string>
-#include <utility>
-#include <vector>
+#include <unordered_map>
 
 class Item
 {
@@ -15,7 +14,7 @@ private:
 
     std::string name;
     const unsigned int id;
-    std::vector<std::pair<unsigned int, float>> rateList;
+	std::unordered_map<unsigned int,float> rateList;
 
 public:
     Item(std::string name);
@@ -26,5 +25,5 @@ public:
     void setName(std::string newName);
 
     void setRate(unsigned int id,float rate);
-    float getRate(unsigned int id = 0);
+    float getRate(unsigned int id);
 };
