@@ -14,6 +14,7 @@ public:
     }
 
     virtual std::string getType() const override;
+    virtual std::vector<std::pair<unsigned int, float>> getUpstreamRate(float rate) const override;
 
 	void setRecipe(unsigned int id,float num);
 	float getRecipe(unsigned int id);

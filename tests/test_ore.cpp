@@ -13,6 +13,13 @@ TEST(OreTest, TestConstructor) {
 		EXPECT_EQ(oreA.getRate(10),10);
 		EXPECT_EQ(oreA.getRate(1),0);
 
+		auto upstreamRate = oreA.getUpstreamRate(20.0); 
+		EXPECT_TRUE(upstreamRate.empty());
+		
+		auto numMan = oreA.getNumMan(20.0);
+		EXPECT_EQ(numMan[0].first,10);
+		EXPECT_EQ(numMan[0].second,2);
+
 		Ore oreB("B");
 		EXPECT_EQ(oreB.getID(), 1);
 		oreA.~Ore();

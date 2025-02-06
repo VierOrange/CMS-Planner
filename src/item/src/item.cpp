@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cmath>
 #include <cmsp/item/item.h>
 #include <queue>
 #include <string>
@@ -60,4 +61,14 @@ float Item::getRate(unsigned int id)
     {
         return it->second;
     }
+}
+
+std::vector<std::pair<unsigned int, int>> Item::getNumMan(float rate) const
+{
+    std::vector<std::pair<unsigned int, int>> res{};
+    for (auto const &p : rateList)
+    {
+        res.emplace_back(p.first, static_cast<int>(std::ceil(rate / p.second)));
+    }
+    return res;
 }

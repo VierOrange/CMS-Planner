@@ -16,6 +16,14 @@ TEST(ProductTest, TestConstructor) {
 		EXPECT_EQ(productA.getRecipe(12), 5);
 		EXPECT_EQ(productA.getRecipe(1), 0);
 
+		auto upstreamRate = productA.getUpstreamRate(20.0); 
+		EXPECT_EQ(upstreamRate[0].first,12);
+		EXPECT_EQ(upstreamRate[0].second,100.0);
+		
+		auto numMan = productA.getNumMan(20.0);
+		EXPECT_EQ(numMan[0].first,11);
+		EXPECT_EQ(numMan[0].second,2);
+
 		Product productB("B");
 		EXPECT_EQ(productB.getID(), 1);
 		productA.~Product();

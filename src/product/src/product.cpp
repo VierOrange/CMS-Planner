@@ -28,3 +28,12 @@ float Product::getRecipe(unsigned int id)
         return it->second;
     }
 }
+std::vector<std::pair<unsigned int, float>> Product::getUpstreamRate(float rate) const
+{
+    std::vector<std::pair<unsigned int, float>> res{};
+    for (auto const &p : recipe)
+    {
+        res.emplace_back(p.first, rate * p.second);
+    }
+    return res;
+}
